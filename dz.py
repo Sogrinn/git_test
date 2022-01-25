@@ -16,3 +16,13 @@ print(my_dict['foo']['b'])
 print(my_dict['bar']['d'])
 # Добавьте в множество элемент 9.
 my_dict['bar']['d'].add(9)
+# Снова выведите множество.
+print(my_dict['bar']['d'])
+# Удалите из списка элемент ‘o’.
+my_dict['moo']['f']['Lol'].remove('o')
+# Добавьте в словарь, который является значением ключа ‘f’ ключ ‘K’ со значением ['K', 'e', 'k'].
+my_dict['moo']['f']['K'] = ['K', 'e', 'k']
+print(my_dict)
+# Очистите словарь my_dict.
+my_dict.clear()
+print(my_dict)
