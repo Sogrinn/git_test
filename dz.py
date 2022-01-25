@@ -10,3 +10,9 @@ print(my_dict['foo'])
 print(my_dict['foo']['b'])
 # Добавьте в my_list 44.
 my_list.append(44)
+# Снова выведите на консоль значение ключа ‘b’.
+print(my_dict['foo']['b'])
+# Выведите множество.
+print(my_dict['bar']['d'])
+# Добавьте в множество элемент 9.
+my_dict['bar']['d'].add(9)
