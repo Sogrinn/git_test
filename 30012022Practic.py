@@ -50,4 +50,4 @@ print(numbers_after, 'После filter')
 
 
 
-
+ssss
