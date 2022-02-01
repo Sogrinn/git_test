@@ -24,11 +24,11 @@ def fun_4(n_1, n_2):
 '''# 5
 fun_5 = lambda n_1, n_2: n_1%n_2
 print(fun_5(5, 3))'''
-'''# 6 • Создадим функцию с простыми командами. Обернём её в декоратор, который бы дополнял возможности функции.
+# 6 • Создадим функцию с простыми командами. Обернём её в декоратор, который бы дополнял возможности функции.
 def decor(f):
     def wr():
         print('//////////')
-        f
+        f()
         print('!!!!!!!!!!')
     return wr
 
@@ -37,8 +37,7 @@ def Arrr():
     print('Arrr')
 
 Arrr()
-'''
-# 7 Использовать функцию map и filter
+'''# 7 Использовать функцию map и filter
 def check(num):
     return num % 2 == 0
 numbers = [randint(1, 100) for i in range(10)]
@@ -46,8 +45,4 @@ print(numbers)
 numbers_after = list(map(fun_2, numbers))
 print(numbers_after, 'После map')
 numbers_after = list(filter(check, numbers))
-print(numbers_after, 'После filter')
-
-
-
-ssss
+print(numbers_after, 'После filter')'''
