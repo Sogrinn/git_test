@@ -1,4 +1,4 @@
-# 1
+'''# 1
 def nothing():
     pass
 
@@ -22,7 +22,21 @@ def fun_4(n_1, n_2):
 
 # 5
 fun_5 = lambda n_1, n_2: n_1%n_2
-print(fun_5(5, 3))
+print(fun_5(5, 3))'''
+
+# 6 • Создадим функцию с простыми командами. Обернём её в декоратор, который бы дополнял возможности функции.
+def decor(f):
+    def wr():
+        print('//////////')
+        f
+        print('!!!!!!!!!!')
+    return wr
+
+@decor
+def Arrr():
+    print('Arrr')
+
+Arrr()
 
 
 
