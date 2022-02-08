@@ -31,8 +31,6 @@ print(task_1.random_num())
 print(task_1.sum())
 print(task_1.exponentiation())
 print(task_1.num_1)"""
-
-
 '''class Calculator:
 
     def calc(self):
@@ -51,7 +49,7 @@ print(task_1.num_1)"""
 calc = Calculator()
 print(calc.calc())
 '''
-
+'''
 
 class Task:
     vowels = 'уеыаоэяию'
@@ -90,3 +88,4 @@ class Task:
 task = Task()
 task.long()
 print(task.fun())
+'''
