@@ -7,9 +7,7 @@ from random import  randint
 
 nikita = Human(eyecolor='green')
 print(nikita.head, nikita.eyecolor)'''
-
-
-class Example:
+"""class Example:
     # global num_1, num_2
     num_1 = randint(1, 100)
     num_2 = randint(1, 100)
@@ -37,4 +35,23 @@ task_1 = Example()
 print(task_1.random_num())
 print(task_1.sum())
 print(task_1.exponentiation())
-print(task_1.num_1)
+print(task_1.num_1)"""
+
+
+class Calculator:
+
+    def calc(self):
+        num_1 = input('Num_1 :')
+        num_2 = input('Num_2 :')
+        sign = input('(+, -, *, /): ')
+        if sign not in '+-*/':
+            print('Неверная операция')
+        else:
+            try:
+                return f'{num_1} {sign} {num_2} = {eval(num_1 + sign + num_2)}'
+            except ZeroDivisionError:
+                return 'На ноль делить нельзя'
+
+
+calc = Calculator()
+print(calc.calc())
