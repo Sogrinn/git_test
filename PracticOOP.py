@@ -8,7 +8,6 @@ from random import  randint
 nikita = Human(eyecolor='green')
 print(nikita.head, nikita.eyecolor)'''
 """class Example:
-    # global num_1, num_2
     num_1 = randint(1, 100)
     num_2 = randint(1, 100)
     def __init__(self, num_3=2, num_4=10):
@@ -18,10 +17,6 @@ print(nikita.head, nikita.eyecolor)'''
     def random_num(self):
         r_num = randint(0, 10000)
         return r_num
-
-
-    '''def sum_global(self): # Использовать только с глобальными переменными
-        return f"{num_1} + {num_2} = {num_1 + num_2}"'''
 
 
     def sum(self):
