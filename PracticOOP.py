@@ -124,7 +124,7 @@ class Human():
 
 
 Human.default_info()
-man = Human('a', 25)
+man = Human('name', 25)
 man.info()
 man.earn_money()
 man.info()
