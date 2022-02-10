@@ -89,3 +89,43 @@ task = Task()
 task.long()
 print(task.fun())
 '''
+
+
+class Human():
+    default_name = None
+    default_age = 0
+
+    def __init__(self, name=default_name, age=default_age):
+        self.name = name
+        self.age = age
+        self.__money = 0
+        self.__house = None
+
+    def info(self):
+        print(f'name = {self.name}\nage = {self.age}\nmoney = {self.__money}\nhouse = {self.__house}')
+
+    @classmethod
+    def default_info(cls):
+        print(f'default name = {cls.default_name}\ndefault age = {cls.default_age}')
+
+    def __make_deal(self, price, house):
+        self.__money -= price
+        self.__house = house
+
+    def earn_money(self):
+        self.__money += 5000
+
+    def buy_house(self, house, discount):
+        price = house.final_price(discount)
+        if self.__money >= price:
+            self.__make_deal()
+        else:
+            print('Not enough money')
+
+
+Human.default_info()
+man = Human('a', 25)
+man.info()
+man.earn_money()
+man.info()
+
