@@ -89,3 +89,12 @@ task = Task()
 task.long()
 print(task.fun())
 '''
+
+class Human():
+    default_name = None
+    default_age = 0
+
+    def __init__(self, name=default_name, age=default_age):
+        self.name = name
+        self.age = age
+
