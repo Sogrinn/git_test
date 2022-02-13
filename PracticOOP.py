@@ -118,14 +118,35 @@ class Human():
     def buy_house(self, house, discount):
         price = house.final_price(discount)
         if self.__money >= price:
-            self.__make_deal()
+            self.__make_deal(price, house)
         else:
             print('Not enough money')
 
 
+class House():
+
+    def __init__(self, area, price):
+        self._area = area
+        self._price = price
+
+    def final_price(self, discount):
+        return self._price * discount / 100
+
+
+class SmallHouse(House):
+
+    def __init__(self, price, area=40):
+        self._price = price
+        self._area = area
+
+
 Human.default_info()
+cottage = SmallHouse(7000)
 man = Human('a', 25)
 man.info()
+man.buy_house(cottage, 10)
 man.earn_money()
+man.earn_money()
+man.buy_house(cottage, 10)
 man.info()
 
