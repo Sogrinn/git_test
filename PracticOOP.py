@@ -89,7 +89,7 @@ task = Task()
 task.long()
 print(task.fun())
 '''
-
+'''
 
 class Human():
     default_name = None
@@ -148,5 +148,80 @@ man.buy_house(cottage, 10)
 man.earn_money()
 man.earn_money()
 man.buy_house(cottage, 10)
-man.info()
+man.info()'''
+
+
+class Tomato:
+    states = {1: "didn't grow", 2: "did grow", 3: "ripe"}
+
+    def __init__(self, index):
+        self._index = index
+        self._state = self.states[1]
+
+    def grow(self):
+        if self._state == "didn't grow":
+            self._state = self.states[2]
+        elif self._state == "did grow":
+            self._state = self.states[3]
+
+    def is_ripe(self):
+        if self._state == "ripe":
+            return True
+        else:
+            return False
+
+
+class TomatoBush():
+
+    def __init__(self, amount):
+        self.amount = amount
+        self.tomatoes = []
+        for tomat in range(amount):
+            tomat = Tomato(tomat)
+            self.tomatoes.append(tomat)
+
+    def grow_all(self):
+        for tomat in self.tomatoes:
+            tomat.grow()
+
+    def all_are_ripe(self):
+        for tomat in self.tomatoes:
+            if not tomat.is_ripe():
+                return False
+                break
+        else:
+            return True
+
+    def give_away_all(self):
+        self.tomatoes = []
+
+
+class Gardener():
+
+    def __init__(self, name, bush):
+        self.name = name
+        self._plant = bush
+
+    def work(self):
+        self._plant.grow_all()
+
+    def harvest(self):
+        if self._plant.all_are_ripe():
+            self._plant.give_away_all()
+            print('The harvest has been harvested')
+        else:
+            print('not yet ripe')
+
+    @staticmethod
+    def knowledge_base():
+        print('knowledge_base')
+
+
+Gardener.knowledge_base()
+tomato_bush = TomatoBush(17)
+man = Gardener('Man', tomato_bush)
+man.work()
+man.harvest()
+man.work()
+man.harvest()
 
