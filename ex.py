@@ -98,12 +98,18 @@ class TicTacToe():
         while True:
             self.step(player= self.player1)
             if self.check_for_victory():
+                self.field.print_field()
                 print('Win X')
                 break
             self.step(player=self.player2)
             if self.check_for_victory():
+                self.field.print_field()
                 print('Win O')
                 break
+            if not self.field.not_used_cells:
+                print('dead heat')
+                break
+
 
 game = TicTacToe()
 game.game()
