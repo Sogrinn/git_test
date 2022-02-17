@@ -18,7 +18,7 @@ class Field():
 
     def __init__(self):
         self.not_used_cells = [str(i) for i in range(1, 10)]
-        self.field = {str(i) : str(i) for i in range(1, 10)}
+        self.field = {str(i): str(i) for i in range(1, 10)}
 
     @staticmethod
     def decor(func):
@@ -31,19 +31,23 @@ class Field():
 
     @decor
     def _print_line_1(self):
-        print(f'| {self.field["1"]} | {self.field["2"]} | {self.field["3"]} |')
+        print(f"| {self.field['1']} | {self.field['2']} | {self.field['3']} |")
 
     def _print_line_2(self):
-        print(f'| {self.field["4"]} | {self.field["5"]} | {self.field["6"]} |')
+        print(f"| {self.field['4']} | {self.field['5']} | {self.field['6']} |")
 
     @decor
     def _print_line_3(self):
-        print(f'| {self.field["7"]} | {self.field["8"]} | {self.field["9"]} |')
+        print(f"| {self.field['7']} | {self.field['8']} | {self.field['9']} |")
 
     def print_field(self):
         self._print_line_1()
         self._print_line_2()
         self._print_line_3()
+
+    def change_cell(self, cell, sign):
+        self.field[cell] = sign
+
 
 
 class Player():
@@ -79,7 +83,7 @@ class TicTacToe():
         while True:
             cell = player.step(self.field.not_used_cells)
             if cell in self.field.not_used_cells:
-                self.field.field[cell] == player.sign
+                self.field.change_cell(cell, player.sign)
                 self.field.not_used_cells.remove(cell)
                 break
             else:
